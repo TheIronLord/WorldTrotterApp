@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9k9-em-GiV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Conversion View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ConversionViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
@@ -80,6 +80,7 @@
                             <outletCollection property="gestureRecognizers" destination="FbF-wd-ccZ" appends="YES" id="6X2-KK-qce"/>
                         </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="3hC-mB-hNL"/>
                     <connections>
                         <outlet property="celsiusLabel" destination="Uqc-Rq-DKr" id="odp-5b-N7L"/>
                         <outlet property="textField" destination="6E5-5p-hy2" id="J3w-a2-ItK"/>
@@ -92,7 +93,39 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1276" y="-233"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="bix-Uh-ohP">
+            <objects>
+                <viewController id="mOp-ZU-FTE" sceneMemberID="viewController">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="kAR-ZM-IXn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
+                    <tabBarItem key="tabBarItem" title="Item" id="c3y-Qg-tg0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gh-lh-dBN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="476"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Vxp-3h-350">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="9k9-em-GiV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jia-HR-KQj">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="n2W-XG-k8q"/>
+                        <segue destination="mOp-ZU-FTE" kind="relationship" relationship="viewControllers" id="5E7-0h-Hg4"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4aA-fG-Zrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-473" y="133"/>
         </scene>
     </scenes>
 </document>
