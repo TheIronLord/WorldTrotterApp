@@ -31,8 +31,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqc-Rq-DKr">
-                                <rect key="frame" x="135.5" y="226" width="103.5" height="84"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqc-Rq-DKr">
+                                <rect key="frame" x="129" y="226" width="116.5" height="84"/>
                                 <color key="backgroundColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <nil key="textColor"/>
@@ -57,10 +57,12 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="fahrenheitFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="TzG-SF-kiw"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nVt-1d-8Vo"/>
                                 </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="9kx-RW-l6o" firstAttribute="centerX" secondItem="6E5-5p-hy2" secondAttribute="centerX" id="1jh-MC-110"/>
                             <constraint firstItem="Uqc-Rq-DKr" firstAttribute="centerX" secondItem="6E5-5p-hy2" secondAttribute="centerX" id="GCc-Dm-sbq"/>
@@ -74,12 +76,21 @@
                             <constraint firstItem="9QK-yx-N2A" firstAttribute="centerX" secondItem="6E5-5p-hy2" secondAttribute="centerX" id="yD1-uQ-XJA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="FbF-wd-ccZ" appends="YES" id="6X2-KK-qce"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="celsiusLabel" destination="Uqc-Rq-DKr" id="odp-5b-N7L"/>
+                        <outlet property="textField" destination="6E5-5p-hy2" id="J3w-a2-ItK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="FbF-wd-ccZ">
+                    <connections>
+                        <action selector="dismissKeyBoard:" destination="BYZ-38-t0r" id="CG7-7g-Qug"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
