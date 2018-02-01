@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Covert-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ConversionViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
@@ -80,7 +80,7 @@
                             <outletCollection property="gestureRecognizers" destination="FbF-wd-ccZ" appends="YES" id="6X2-KK-qce"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="3hC-mB-hNL"/>
+                    <tabBarItem key="tabBarItem" title="Covert" image="ConvertIcon" id="3hC-mB-hNL"/>
                     <connections>
                         <outlet property="celsiusLabel" destination="Uqc-Rq-DKr" id="odp-5b-N7L"/>
                         <outlet property="textField" destination="6E5-5p-hy2" id="J3w-a2-ItK"/>
@@ -95,15 +95,15 @@
             </objects>
             <point key="canvasLocation" x="1276" y="-233"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="bix-Uh-ohP">
             <objects>
-                <viewController id="mOp-ZU-FTE" sceneMemberID="viewController">
+                <viewController id="mOp-ZU-FTE" customClass="MapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
                     <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="kAR-ZM-IXn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </mapView>
-                    <tabBarItem key="tabBarItem" title="Item" id="c3y-Qg-tg0"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="c3y-Qg-tg0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gh-lh-dBN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,4 +128,8 @@
             <point key="canvasLocation" x="-473" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ConvertIcon" width="48" height="32"/>
+        <image name="MapIcon" width="48" height="32"/>
+    </resources>
 </document>
