@@ -81,4 +81,17 @@ class ConversionViewController : UIViewController, UITextFieldDelegate{
         print("ConversionViewController loaded its view.")
         celsiusLabel.text = "???"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Change background color if its morning or evening
+        let hour = NSCalendar.current.component(.hour, from: Date())
+        switch hour{
+        case 7..<16:
+            self.view.backgroundColor = UIColor.gray
+            break
+        default:
+            self.view.backgroundColor = UIColor.black
+        }
+    }
 }
