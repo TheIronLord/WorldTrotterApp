@@ -78,7 +78,6 @@ class ConversionViewController : UIViewController, UITextFieldDelegate{
     /*Initializes the view before it loads*/
     override func viewDidLoad(){
         super.viewDidLoad()
-        print("ConversionViewController loaded its view.")
         celsiusLabel.text = "???"
     }
     
