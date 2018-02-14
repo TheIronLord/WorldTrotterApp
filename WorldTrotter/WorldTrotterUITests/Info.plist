@@ -18,5 +18,11 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app requires your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app requires your location</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app requires your location</string>
 </dict>
 </plist>

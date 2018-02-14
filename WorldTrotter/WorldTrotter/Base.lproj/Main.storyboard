@@ -105,6 +105,16 @@
             </objects>
             <point key="canvasLocation" x="1276" y="476"/>
         </scene>
+        <!--Web-->
+        <scene sceneID="ujn-WT-B7a">
+            <objects>
+                <viewController title="Web" id="jq9-dS-H5Z" customClass="WebViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Web" image="WebIcon" id="3zg-gV-2mB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BDP-89-5MD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="1257"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vxp-3h-350">
             <objects>
@@ -118,6 +128,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="n2W-XG-k8q"/>
                         <segue destination="mOp-ZU-FTE" kind="relationship" relationship="viewControllers" id="5E7-0h-Hg4"/>
+                        <segue destination="jq9-dS-H5Z" kind="relationship" relationship="viewControllers" id="wmW-c5-Tg4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aA-fG-Zrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -128,5 +139,6 @@
     <resources>
         <image name="ConvertIcon" width="48" height="32"/>
         <image name="MapIcon" width="48" height="32"/>
+        <image name="WebIcon" width="50" height="50"/>
     </resources>
 </document>
