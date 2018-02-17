@@ -19,6 +19,7 @@ class MapViewController: UIViewController{
     let span: MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
     
     var showCurrentLocation: UIButton!
+    var showAnnotationLocation: UIButton!
     
     
     override func viewDidLoad(){
@@ -34,6 +35,7 @@ class MapViewController: UIViewController{
         
         //Set up view of this view controller
         showCurrentLocation = UIButton.init(type: UIButtonType.system)
+        showAnnotationLocation = UIButton.init(type: UIButtonType.system)
         view = mapView
 
         
@@ -50,6 +52,13 @@ class MapViewController: UIViewController{
         showCurrentLocation.center = CGPoint(x: 200, y: 650)
         showCurrentLocation.addTarget(self, action: #selector(showCurrentLocation(_:)), for: .touchUpInside)
         view.addSubview(showCurrentLocation)
+        
+        //Create showAnnotationLocation UIButton
+        showAnnotationLocation.setTitle("Show Annotation Location", for: .normal)
+        showAnnotationLocation.bounds = CGRect(x: 0, y: 0, width: 500, height: 100)
+        showAnnotationLocation.center = CGPoint(x: 200, y: 600)
+        showAnnotationLocation.addTarget(self, action: #selector(showAnnotionLocations(_:)), for: .touchUpInside)
+        view.addSubview(showAnnotationLocation)
         
         //Add Constraints for segmentedControl
         let topConstraint = segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8)
@@ -84,6 +93,10 @@ class MapViewController: UIViewController{
     @objc func showCurrentLocation(_ showCurrentLocationButton: UIButton){
         centerMapOnUserLocation()
     }
+    
+    @objc func showAnnotionLocations(_ showCurrentLocationButton: UIButton){
+        
+    }
 }
 
 extension MapViewController: MKMapViewDelegate{
@@ -95,7 +108,7 @@ extension MapViewController: MKMapViewDelegate{
 }
 
 extension MapViewController: CLLocationManagerDelegate{
-    
+    /*Get users permission to get their location*/
     func configureLocationServices(){
         if authorizationStatus == .notDetermined{
             locationManager.requestAlwaysAuthorization()
@@ -104,6 +117,7 @@ extension MapViewController: CLLocationManagerDelegate{
         }
     }
     
+    /*Find the location of the device and zoom the mapView to it*/
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locations = locations[0]
         let userLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(locations.coordinate.latitude, locations.coordinate.longitude)
