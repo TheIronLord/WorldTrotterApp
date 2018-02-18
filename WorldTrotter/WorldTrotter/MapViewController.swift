@@ -144,6 +144,11 @@ class MapViewController: UIViewController{
     
     @objc func showAnnotionLocations(_ showCurrentLocationButton: UIButton){
         annotationLocation = (annotationLocation + 1) % 4
+        
+        if annotationLocation == 0{
+            annotationLocation = 1
+        }
+        
         setAnnotationLocation(annotationLocation)
     }
 }

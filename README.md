@@ -1,9 +1,11 @@
 # WTAREADME
 ## UPDATE 6
-### WebViewController
-![Web View Controller](Image/WebViewController.png)
+### Gold Challenge
+![Gold Challenge Annotation](Image/GoldChallengeMapAnnotation.png)
 ### Map Current Location
-![Map Current Location](Image/MapCurrentLocation.png)
+![Map Current Location](Image/ShowCurrentLocation.png)
+### Web Controller
+![Web View Controller](Image/WebViewController.png)
 
 ## UPDATE 5
 ### Morning Background
