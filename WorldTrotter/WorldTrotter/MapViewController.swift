@@ -87,7 +87,10 @@ class MapViewController: UIViewController{
         view = mapView
 
         //Create segmentedControl for the different types of mapViews
-        let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid", "Satellite"])
+        let standardString = NSLocalizedString("Standard", comment: "Standard Map View")
+        let hybridString = NSLocalizedString("Hybrid", comment: "Hybrid Map View")
+        let satelliteString = NSLocalizedString("Satellite", comment: "Satellite Map View")
+        let segmentedControl = UISegmentedControl(items: [standardString, hybridString, satelliteString])
         segmentedControl.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(mapTypeChanged(_:)), for: .valueChanged)
@@ -105,14 +108,16 @@ class MapViewController: UIViewController{
         trailingConstraint.isActive = true
         
         //Create showCurrentLocation UIButton
-        showCurrentLocation.setTitle("Show Current Location", for: .normal)
+        let showCurrentLocationString = NSLocalizedString("Show Current Location", comment: "Shows the users current location")
+        showCurrentLocation.setTitle(showCurrentLocationString, for: .normal)
         showCurrentLocation.bounds = CGRect(x: 0, y: 0, width: 500, height: 100)
         showCurrentLocation.center = CGPoint(x: 200, y: 650)
         showCurrentLocation.addTarget(self, action: #selector(showCurrentLocation(_:)), for: .touchUpInside)
         view.addSubview(showCurrentLocation)
         
         //Create showAnnotationLocation UIButton
-        showAnnotationLocation.setTitle("Show Annotation Location", for: .normal)
+        let showAnnotationLocationString = NSLocalizedString("Show Annotation Location", comment: "Shows the annotation location on the map")
+        showAnnotationLocation.setTitle(showAnnotationLocationString, for: .normal)
         showAnnotationLocation.bounds = CGRect(x: 0, y: 0, width: 500, height: 100)
         showAnnotationLocation.center = CGPoint(x: 200, y: 550)
         showAnnotationLocation.addTarget(self, action: #selector(showAnnotionLocations(_:)), for: .touchUpInside)

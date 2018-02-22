@@ -1,4 +1,9 @@
 # WTAREADME
+
+## UPDATE 7
+### Spanish Support
+![Spanish Support](Image/SpanishSupport.png)
+
 ## UPDATE 6
 ### Gold Challenge
 ![Gold Challenge Annotation](Image/GoldChallengeMapAnnotation.png)

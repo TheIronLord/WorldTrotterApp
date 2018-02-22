@@ -29,15 +29,17 @@ class ConversionViewController : UIViewController, UITextFieldDelegate{
     
     /*TextField delegate that will filter the input field of decimals and letters*/
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
-        let replacementhasDecimalSeparator = string.range(of: ".")
         let letterFilter = NSCharacterSet.letters
+        let currentLocale = Locale.current
+        let decimalSeperator = currentLocale.decimalSeparator ?? "."
+        let existingTextHasDecimalSeparator = textField.text?.range(of: decimalSeperator)
+        let replacementHasDecimalSeparator = string.range(of: decimalSeperator)
         
         if string.rangeOfCharacter(from: letterFilter) != nil{
             return false
         }
         
-        if existingTextHasDecimalSeparator != nil && replacementhasDecimalSeparator != nil{
+        if existingTextHasDecimalSeparator != nil && replacementHasDecimalSeparator != nil{
             return false
         }
         return true
@@ -63,8 +65,8 @@ class ConversionViewController : UIViewController, UITextFieldDelegate{
     
     /*This is called when the user puts values into the textField*/
     @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField){
-        if let text = textField.text, let value = Double(text){
-            fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
+        if let text = textField.text, let number = numberFormatter.number(from: text){
+            fahrenheitValue = Measurement(value: number.doubleValue, unit: .fahrenheit)
         }else{
             celsiusLabel.text = "???"
         }
