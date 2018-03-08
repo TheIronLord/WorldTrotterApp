@@ -1,5 +1,8 @@
 # WTAREADME
 
+## Repo Description
+Utilized Swift, Auto Constraint, UITextFieldDelegate, MapKit, UITabController and XCode to build an app for iOS devices that converts temperature from fahrenheit to celsius. The app takes advantage of MapKit allowing the user to zoom into their current location. It also uses annotations which shows places of interest.
+
 ## UPDATE 7
 ### Spanish Support
 ![Spanish Support](Image/SpanishSupport.png)
